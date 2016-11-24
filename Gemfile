@@ -17,10 +17,18 @@ gem 'paperclip'
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'shoulda-callback-matchers'
+  gem 'rspec-activemodel-mocks'
+  gem 'rspec-its'
 end
 

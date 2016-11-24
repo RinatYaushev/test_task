@@ -1,8 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_slider
 
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-
   def new
     @post = Post.new
   end
@@ -21,10 +19,6 @@ class PostsController < ApplicationController
 
   def set_slider
     @slider = Slider.find(params[:slider_id])
-  end
-
-  def set_post
-    @post = @slider.posts.find(params[:id])
   end
 
   def post_params

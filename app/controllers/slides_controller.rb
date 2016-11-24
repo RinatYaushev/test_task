@@ -43,6 +43,6 @@ class SlidesController < ApplicationController
   def slide_params
     params.require(:slide)
           .permit(:image)
-          .merge(slider_id: @slide_slider.id)
+          .merge(slider: @slide_slider)
   end
 end
