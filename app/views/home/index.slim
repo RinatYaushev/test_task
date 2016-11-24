@@ -1,0 +1,30 @@
+.big-title
+  | Sliders
+
+= link_to 'New slider', new_slider_path, class: 'button-turquoise'
+
+table
+  tr
+    th
+      | Name
+    th
+      | Slides
+    th
+
+  - @sliders.each do |slider|
+    tr
+      td
+        = slider.name
+      td
+        - slider.slides.each do |slide|
+          = link_to image_tag(slide.image.url(:thumb)), slider_slide_path(slider, slide), class: 'slide'
+      td
+        = link_to 'Add slide', new_slider_slide_path(slider), class: 'button-green'
+        br
+        = link_to 'Show', slider_path(slider), class: 'button'
+        br
+        = link_to 'Edit', edit_slider_path(slider), class: 'button'
+        br
+        = link_to 'Destroy', slider_path(slider), method: :delete, class: 'button-red'
+
+

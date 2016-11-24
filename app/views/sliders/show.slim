@@ -1,0 +1,27 @@
+.title
+  = @slider.name
+.
+  = link_to 'Edit slider', edit_slider_path(@slider), class: 'button'
+
+- if @slider.slides.present?
+  - @slider.slides.each do |slide|
+    = image_tag slide.image.url(:thumb), class: 'slide'
+
+
+.chat
+  - if @slider.posts.present?
+    .title
+      | Chat
+    - @slider.posts.each do |post|
+      strong => post.author
+      | wrote:
+      br
+      = post.name
+      br
+      = post.content
+      br
+      br
+= link_to 'New post', new_slider_post_path(@slider), class: 'button-green'
+
+br
+= link_to 'Home', root_path, class: 'button'

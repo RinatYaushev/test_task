@@ -1,0 +1,16 @@
+= form_for [@slider, @post] do |f|
+  => f.label :name
+  = f.text_field :name
+  br
+  br
+  => f.label :author
+  = f.text_field :author
+  br
+  br
+  => f.label :content
+  = f.text_area :content
+  br
+  br
+  = f.submit 'Save', class: 'button'
+
+= link_to 'Home', root_path, class: 'button-turquoise'

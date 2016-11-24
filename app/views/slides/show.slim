@@ -1,0 +1,5 @@
+= image_tag @slide.image.url(:thumb)
+br
+= link_to 'Edit', edit_slider_slide_path(@slide_slider, @slide), class: 'button'
+= link_to 'Destroy', slider_slide_path(@slide_slider, @slide), method: :delete, class: 'button-red'
+= link_to 'Home', root_path, class: 'button-turquoise'

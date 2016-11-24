@@ -1,0 +1,5 @@
+= form_for [@slide_slider, @slide] do |f|
+  = f.file_field :image
+  = f.submit 'Save', class: 'button'
+
+= link_to 'Home', root_path, class: 'button-turquoise'
